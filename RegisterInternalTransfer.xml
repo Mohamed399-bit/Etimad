@@ -1,5 +1,6 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="Regression bucket for Register Internal transfer ">
+    <parameter name="browser" value="chrome-headless"></parameter>
     <test name="Regression bucket for Register Internal transfer " preserve-order="true">
         <classes>
 
