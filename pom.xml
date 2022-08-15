@@ -5,26 +5,44 @@
   <groupId>Etimad</groupId>
   <artifactId>Etimad</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <configuration>
-          <source>7</source>
-          <target>7</target>
-        </configuration>
-      </plugin>
-    </plugins>
-  </build>
+
   <packaging>jar</packaging>
 
   <name>Etimad</name>
   <url>http://maven.apache.org</url>
 
   <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  </properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+         <!--project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding-->
+     </properties>
+
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <configuration>
+            <source>8</source>
+            <target>8</target>
+            <encoding>${project.build.sourceEncoding}</encoding>
+          </configuration>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <version>3.0.0-M3</version>
+          <configuration>
+            <argLine>-Dfile.encoding=${project.build.sourceEncoding}</argLine>
+            <suiteXmlFiles>
+              <!--suppress UnresolvedMavenProperty -->
+              <suiteXmlFile>${testNGSuite}</suiteXmlFile>
+            </suiteXmlFiles>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
 
   <dependencies>
     <dependency>
@@ -86,4 +104,20 @@
       <version>42.2.14</version>
     </dependency>
   </dependencies>
+
+  <profiles>
+    <profile>
+      <id>GroupOfSuites</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+        <property>
+          <name>environment</name>
+          <value>GroupOfSuites</value>
+        </property>
+      </activation>
+      <properties>
+        <testNGSuite>RegisterInternalTransfer.xml</testNGSuite>
+      </properties>
+    </profile>
+  </profiles>
 </project>
