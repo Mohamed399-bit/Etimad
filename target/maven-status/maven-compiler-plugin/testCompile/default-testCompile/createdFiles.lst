@@ -1,0 +1,13 @@
+tests\ApprovedInternalTransferTest.class
+utilities\DataBaseHelper.class
+utilities\SetURL.class
+tests\LoginAsApproveBudgetTransfersTest.class
+tests\addNewFirstRuleTest.class
+tests\entreTransferAccountTest.class
+tests\LoginAsCreateBudgetTransferTest.class
+tests\LoginAsApproveBudgetTransfersTest222.class
+tests\loginAsAdmin.class
+tests\viewTransferTest.class
+utilities\Helper.class
+tests\enterTransferDetailsTest.class
+tests\TestBase.class

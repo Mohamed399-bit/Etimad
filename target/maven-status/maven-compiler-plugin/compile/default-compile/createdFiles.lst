@@ -1,0 +1,15 @@
+pages\firstRulePage.class
+pages\homePage.class
+pages\InternalTransferPage.class
+pages\loginPageAfterLogoutPage.class
+pages\adminHomePage.class
+pages\applyTransferPage.class
+pages\enterTransferDetailsPage.class
+pages\inBoxPage.class
+pages\transferData1Page.class
+pages\lunchPage.class
+pages\userHomePage.class
+pages\loginPage.class
+pages\PageBase.class
+pages\addNewFirstRulePage.class
+pages\internalTransferDetailsPage.class
